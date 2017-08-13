@@ -39,11 +39,17 @@ public class TimeEntry implements Comparable, Serializable {
 		}
 	}
 
+	// public void setTimeMod(double timeMod) {
+	// 	this.timeMod = timeMod;
+	// }
+
 	public void printSummary() {
 		System.out.println("Task: " + task);
-		System.out.printf("Dispatch Time: %d-%d %02d:%02d\n", dispatchTime.getMonthValue(), dispatchTime.getDayOfMonth(), dispatchTime.getHour(), dispatchTime.getMinute());
+		// System.out.printf("Dispatch Time: %d-%d %02d:%02d\n", dispatchTime.getMonthValue(), dispatchTime.getDayOfMonth(), dispatchTime.getHour(), dispatchTime.getMinute());
+		System.out.printf("Dispatch Time: %02d-%02d %02d:%02d\n", dispatchTime.getMonthValue(), dispatchTime.getDayOfMonth(), dispatchTime.getHour(), dispatchTime.getMinute());
 		if(isComplete) {
-			System.out.printf("Return Time: %d-%d %02d:%02d\n", returnTime.getMonthValue(), returnTime.getDayOfMonth(), returnTime.getHour(), returnTime.getMinute());
+			// System.out.printf("Return Time: %d-%d %02d:%02d\n", returnTime.getMonthValue(), returnTime.getDayOfMonth(), returnTime.getHour(), returnTime.getMinute());
+			System.out.printf("Return Time: %02d-%02d %02d:%02d\n", returnTime.getMonthValue(), returnTime.getDayOfMonth(), returnTime.getHour(), returnTime.getMinute());
 			System.out.println("Staff Sig: " + BadgeUtils.trimIDStaff(staffSig.getBadgeNumber()));
 		}
 		else {
