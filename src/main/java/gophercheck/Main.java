@@ -334,7 +334,7 @@ running:
 		}
 	}
 
-	// TODO: Temp this better fucking go bye bye at the end of the con(2017 I mean, don't think you can roll this over to next year)
+	// TODO: Temp. This can be removed once the old database has been cleared
 	private static long timeFix(TimeEntry t) {
 		ByteArrayOutputStream bytes = new ByteArrayOutputStream();
 		PrintStream ps = new PrintStream(bytes);
@@ -486,8 +486,7 @@ running:
 			acr122.open();
 		}
 		catch(RuntimeException ex) {
-			// TODO: fix this before release
-			System.out.println("Fuck");
+			System.out.println("Failed to start NFC reader");
 			return;
 		}
 		acr122.close();
